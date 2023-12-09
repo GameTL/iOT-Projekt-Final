@@ -1,5 +1,9 @@
 # conda install -c conda-forge deepface
+<<<<<<< HEAD
 print("initializing face recog...")
+=======
+print("initializing...")
+>>>>>>> 93bbb3bf06d675fe821036466f01e32d2245e7af
 from deepface import DeepFace
 import cv2
 import time
@@ -19,6 +23,15 @@ models = [
 ]
 
 
+<<<<<<< HEAD
+=======
+# Camera Config
+[X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1280, 720, 30]
+cap = cv2.VideoCapture(0)  # if mac then 1 if pi then 0
+cap.set(3, X_RESOLUTION)
+cap.set(4, Y_RESOLUTION)
+cap.set(5, VIDEO_FPS)
+>>>>>>> 93bbb3bf06d675fe821036466f01e32d2245e7af
 
 
 def get_lastest_pic_name(previous=False):
@@ -54,12 +67,15 @@ def get_lastest_pic_name(previous=False):
 
 def take_picture(timer = 2):
 
+<<<<<<< HEAD
     # Camera Config
     [X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1280, 720, 30]
     cap = cv2.VideoCapture(1)  # if mac then 1 if pi then 0
     cap.set(3, X_RESOLUTION)
     cap.set(4, Y_RESOLUTION)
     cap.set(5, VIDEO_FPS)
+=======
+>>>>>>> 93bbb3bf06d675fe821036466f01e32d2245e7af
     print("taking a take_picture")
     start = time.time()
     # Initialize the camera
@@ -81,14 +97,22 @@ def take_picture(timer = 2):
                 color=(0, 255, 0),
                 thickness=2,
             )
+<<<<<<< HEAD
             # cv2.imshow("frame", frame)
+=======
+            cv2.imshow("frame", frame)
+>>>>>>> 93bbb3bf06d675fe821036466f01e32d2245e7af
 
             print(time_count)
             if time_count > timer:
                 if ret:
                     print("Frame captured successfully")
                     # Display the captured frame
+<<<<<<< HEAD
                     # cv2.imshow("Captured Frame", frame)
+=======
+                    cv2.imshow("Captured Frame", frame)
+>>>>>>> 93bbb3bf06d675fe821036466f01e32d2245e7af
                     saved_path = get_lastest_pic_name()
 
                     # Save the frame as an image file
@@ -121,7 +145,11 @@ def take_picture(timer = 2):
     return saved_path
 
 
+<<<<<<< HEAD
 def compare(target="img_database/1.jpg", input="", threshold=0.4, debug=True) -> bool:
+=======
+def compare(target="img_database/1.jpg", input="", threshold=0.4, debug=False) -> bool:
+>>>>>>> 93bbb3bf06d675fe821036466f01e32d2245e7af
     # >>> True == match
     # >>> False == not a match
     print(f"""Comparing:
